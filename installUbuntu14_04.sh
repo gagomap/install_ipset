@@ -10,9 +10,12 @@ fi
 done
 
 #Make folder
-mkdir /etc/ipset-blacklist
+mkdir -p /etc/ipset-blacklist
 
 #Put update script in cron daily to keep it up to date
+
+\curl -sSL https://raw.githubusercontent.com/gagomap/ipset-blacklist/master/ipset-blacklist.conf > /etc/ipset-blacklist/ipset-blacklist.conf
+
 \curl -sSL https://raw.githubusercontent.com/gagomap/ipset-blacklist/master/update-blacklist.sh > /etc/cron.daily/update-blacklist.sh
 chmod +x /etc/cron.daily/update-blacklist.sh
 
