@@ -19,7 +19,7 @@ mkdir -p /etc/ipset-blacklist
 \curl -sSL https://raw.githubusercontent.com/gagomap/ipset-blacklist/master/update-blacklist.sh > /etc/cron.daily/update-blacklist.sh
 chmod +x /etc/cron.daily/update-blacklist.sh
 
-#Create the needed ipset
+#Create blacklist
 ipset create blacklist hash:net family inet hashsize 131072 maxelem 262144
 
 #Fill up the blacklist set
