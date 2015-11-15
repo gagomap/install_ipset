@@ -20,7 +20,7 @@ mkdir -p /etc/ipset-blacklist
 chmod +x /etc/cron.daily/update-blacklist.sh
 
 #Create blacklist
-#ipset create blacklist hash:net family inet hashsize 131072 maxelem 262144
+ipset create blacklist hash:net family inet hashsize 131072 maxelem 262144
 
 #Fill up the blacklist set
 /etc/cron.daily/update-blacklist.sh
